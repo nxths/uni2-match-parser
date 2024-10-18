@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
             m = re.search(r"Destination: (?P<filename>.+$)", yt_dlp_output, re.MULTILINE)
             if m:
-                video_filepath = [f for f in os.listdir('.') if f.endswith(m.group("filename"))][0]
+                video_filepath = [f for f in os.listdir('.') if f.endswith(m.group("filename").split()[-1])][0]
             else:
                 print(f"error parsing yt-dlp destination: {yt_dlp_output}")
                 sys.exit(1)
