@@ -1,5 +1,5 @@
 # Overview
-This script is for parsing out matches from youtube videos for Under Night In-Birth II, generating an html file containing match start times with character names. This is used as part of [insubstantial.org/uni2-seth](https://insubstantial.org/uni2-seth/).
+This script is for parsing out matches from youtube videos for Under Night In-Birth II, generating an html file containing match start times with character names. The [windowed](https://github.com/nxths/uni2-match-parser/tree/windowed) branch is used as part of [insubstantial.org/uni2-seth](https://insubstantial.org/uni2-seth/).
 
 * ``uni2-parser.py``: download and parse youtube videos, run with ``--help`` for more details.
 
