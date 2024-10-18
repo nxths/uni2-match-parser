@@ -55,21 +55,21 @@ def load_char_hashes(dirname: str, suffix: str) -> Dict[str, imagehash.ImageHash
     return char_hashes
 
 
-VS_IMAGE_BOX = [97, 26, 97+20, 26+93]
+VS_IMAGE_BOX = [116, 13, 116+22, 13+125]
 VS_IMAGE = load_image("vs.png")
 VS_IMAGE_HASH = imagehash.dhash(VS_IMAGE.crop(VS_IMAGE_BOX))
 VS_IMAGE_HASH_THRESHOLD = 10
 
-CLAUSE_IMAGE_BOX = [80, 16, 80+54, 16+113]
+CLAUSE_IMAGE_BOX = [91, 13, 91+72, 13+107]
 CLAUSE_IMAGE = load_image("clause.png")
 CLAUSE_IMAGE_HASH = imagehash.dhash(CLAUSE_IMAGE.crop(CLAUSE_IMAGE_BOX))
 CLAUSE_IMAGE_HASH_THRESHOLD = 20
 
-CHAR_LEFT_IMAGE_BOX = [19, 16, 19+61, 16+84]
-CHAR_RIGHT_IMAGE_BOX = [134, 16, 134+61, 16+84]
+CHAR_LEFT_IMAGE_BOX = [12, 8, 12+83, 8+100]
+CHAR_RIGHT_IMAGE_BOX = [158, 8, 158+83, 8+100]
 CHAR_LEFT_HASHES = load_char_hashes("chars", "-left")
 CHAR_RIGHT_HASHES = load_char_hashes("chars", "-right")
-CHAR_IMAGE_HASH_THRESHOLD = 10
+CHAR_IMAGE_HASH_THRESHOLD = 100
 
 
 def clip_frame_to_image(clip_frame: numpy.ndarray) -> Image:
@@ -188,7 +188,7 @@ if __name__ == "__main__":
 
             m = re.search(r"Destination: (?P<filename>.+$)", yt_dlp_output, re.MULTILINE)
             if m:
-                video_filepath = [f for f in os.listdir('.') if f.endswith(m.group("filename"))][0]
+                video_filepath = [f for f in os.listdir('.') if f.endswith(m.group("filename").split()[-1])][0]
             else:
                 print(f"error parsing yt-dlp destination: {yt_dlp_output}")
                 sys.exit(1)

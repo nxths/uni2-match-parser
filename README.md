@@ -14,4 +14,4 @@ The source should be cross platform but has only been tested on linux and window
 * [yt-dlp](https://github.com/yt-dlp/yt-dlp) (needs to be in PATH)
 
 # Limitations
-The script was only written to work on the particular video layout for the [@yamino999](https://www.youtube.com/@yamino999/streams) youtube channel. Supporting other layouts (e.g. fullscreen gameplay) could be done by updating the `data/` image files and expected `*_IMAGE_BOX` coordinates in the code.
+The script only works for fullscreen gameplay footage.
